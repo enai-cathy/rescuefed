@@ -43,18 +43,31 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useAuth } from "@/app/context/AuthContext";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const { user, logout } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  // Define role-based navigation
+   // Change navbar style on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) setScrolled(true);
+      else setScrolled(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+ // Role-based navigation
   const navItems =
     user?.role === "admin"
       ? [
@@ -72,16 +85,28 @@ export default function Navbar() {
         ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/70 backdrop-blur-lg shadow-md border-b border-[#7A0C1020]">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-[#7A0C1020]"
+          : "bg-transparent text-white"
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
         {/* Brand */}
-        <Link href="/" className="flex items-center space-x-2">
-          <div className="w-8 h-8 rounded-full bg-[#7A0C10] flex items-center justify-center text-white font-bold text-lg">
-            R
+        <Link href="/" className="flex items-center space-x-2 group">
+           <div className="relative rounded-full bg-white w-8 h-8">
+            <Image
+              src="/images/logo.png" 
+              alt="Rescue Federation Logo"
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
-          <span className="font-semibold text-lg text-[#111111] tracking-wide">
-            Rescue<span className="text-[#7A0C10]">Fed</span>
-          </span>
+          {/* <span className="font-semibold text-lg text-[#111111] tracking-wide">
+            Rescue<span className="text-[#7A0C10]">Federation</span>
+          </span> */}
         </Link>
 
         {/* Desktop Nav */}

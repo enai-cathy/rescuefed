@@ -8,8 +8,8 @@ import { CheckCircle, Stethoscope, Ambulance, CalendarDays } from "lucide-react"
 
 type Booking = {
   id: number;
-  // name: string;
-  // email: string;
+  name: string;
+  email: string;
   service: string;
   date: string;
   note: string;
@@ -66,8 +66,8 @@ export default function DashboardPage() {
     
     const newBooking: Booking = {
       id: Date.now(),
-      // name: "",
-      // email: "",
+      name: user?.name || "",
+      email: user?.email || "N/A",
       ...form,
       status: "Pending",
     };
@@ -78,18 +78,6 @@ export default function DashboardPage() {
     setForm({ service: "", date: "", note: "" });
   };
 
-//  // Simulate status update (for demo only)
-//   const updateStatus = (id: number) => {
-//     const updated = bookings.map((b) => {
-//       if (b.id === id) {
-//         if (b.status === "Pending") b.status = "Accepted";
-//         else if (b.status === "Accepted") b.status = "Completed";
-//       }
-//       return b;
-//     });
-//     setBookings(updated);
-//     localStorage.setItem("bookings", JSON.stringify(updated));
-//   };
 
   if (!user) {
     return (
