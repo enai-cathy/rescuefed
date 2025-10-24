@@ -76,8 +76,8 @@ export default function Navbar() {
         ]
       : user
       ? [
-          { name: "Book Service", href: "/dashboard" },
-          { name: "My Requests", href: "/dashboard#requests" },
+          { name: "Book Service", href: "/request" },
+          { name: "My Requests", href: "/requests" },
         ]
       : [
           { name: "Login", href: "/login" },
@@ -104,9 +104,6 @@ export default function Navbar() {
               priority
             />
           </div>
-          {/* <span className="font-semibold text-lg text-[#111111] tracking-wide">
-            Rescue<span className="text-[#7A0C10]">Federation</span>
-          </span> */}
         </Link>
 
         {/* Desktop Nav */}

@@ -10,13 +10,13 @@ export default function HomePage() {
       {/* Fullscreen Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-1.jpg" // Ensure this file exists in /public/images
+          src="/images/hero-image-3.jpg" 
           alt="Rescue Federation background"
           fill
           priority
           className="object-cover object-bottom opacity-90"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Top Text */}

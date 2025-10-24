@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     if (foundUser) {
       localStorage.setItem("user", JSON.stringify(foundUser));
       setUser(foundUser);
-      router.push(foundUser.role === "admin" ? "/admin" : "/dashboard");
+      router.push(foundUser.role === "admin" ? "/admin" : "/request");
       return true;
    } else {
     alert("Invalid email or password");
