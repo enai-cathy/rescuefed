@@ -5,6 +5,17 @@
 Built with **Next.js**, **TypeScript**, and **React Context**, the platform demonstrates strong user-centric design, authentication logic, and local data persistence for admin and user views.
 
 ---
+##  Assumptions & Constraints
+
+- LocalStorage is used for demo persistence (no backend yet).
+
+- Admin data access is simulated.
+
+- App assumes a single-device local session.
+
+- No email verification or backend authentication implemented yet.
+
+---
 
 ##  Features
 
