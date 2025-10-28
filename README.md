@@ -74,7 +74,7 @@ Built with **Next.js**, **TypeScript**, and **React Context**, the platform demo
 ---
 
 ##  Folder Structure
-
+```
 src/
 │
 ├── app/
@@ -94,7 +94,7 @@ src/
 ├── hero-1.jpg
 └── hero-2.jpg
 
-
+```
 ---
 
 ## 🚀 Setup & Installation
@@ -120,6 +120,7 @@ Then open http://localhost:3000
 
 You can mock user accounts locally:
 ```
+//lib/users.js
 {
   "username": "John Doe",
   "email": "john@example.com"
