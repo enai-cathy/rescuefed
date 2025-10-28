@@ -123,7 +123,7 @@ src/
 
 ```bash
 # Clone repository
-git clone https://github.com/<your-username>/rescuefed.git
+git clone https://github.com/enai-cathy/rescuefed.git
 
 # Move into project folder
 cd rescuefed
@@ -135,8 +135,8 @@ npm install
 npm run dev
 
 ```
-Then open http://localhost:3000
- to view it in your browser.
+Then open http://localhost:3000 to view it in your browser.
+ No database setup required (LocalStorage only).
 
 ## Demo Users
 
