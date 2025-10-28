@@ -79,15 +79,26 @@ src/
 │
 ├── app/
 │ ├── page.tsx # Landing page
-│ ├── login/ # Login and registration logic
-│ ├── transport/ # Booking dashboard
-│ ├── admin/ # Admin panel (optional)
+│ ├── login/ # Login logic
+│ ├── register/ # Registration logic
+│ ├── request/ # Booking dashboard
+│ ├── admin/ # Admin panel 
 │ └── context/
 │ └── AuthContext.tsx # Handles auth and global user state
 │
 ├── components/
+│ ├── admin/
+│ └── AdminHeader.tsx
+│ └── EmptyState.tsx
+│ └── .tsx
 │ ├── Navbar.tsx
 │ └── Footer.tsx
+│ └── Loader.tsx
+│
+└── lib/
+├── data.ts
+└── users.ts
+
 │
 └── public/
 └── images/
